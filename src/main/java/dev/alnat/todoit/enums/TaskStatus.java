@@ -19,7 +19,7 @@ public enum TaskStatus {
     OVERDUE(2, "Задача просрочена", false),
     CANCELED(3, "Задача отмена", false),
     DELETED(4, "Задача удалена", true),
-    ARCHIVED(5, "Задача архивирована", true);
+    ARCHIVED(5, "Задача архивирована", false);
 
     private final int value;
     private final String message;
