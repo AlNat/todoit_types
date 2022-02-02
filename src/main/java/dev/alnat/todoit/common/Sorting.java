@@ -20,7 +20,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class Sorting implements Serializable {
 
-    @Schema(description = "Поле сортировки")
+    @Schema(description = "Поле сортировки", required = true)
     private String sortBy;
 
     @Schema(description = "Тип сортировки")

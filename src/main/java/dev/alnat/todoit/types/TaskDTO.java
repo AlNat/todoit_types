@@ -30,19 +30,20 @@ import java.time.LocalDateTime;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TaskDTO implements Serializable {
 
+    @Schema(description = "Идентификатор задачи", example = "1")
     @EqualsAndHashCode.Include
     private Long id;
 
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-    @Schema(description = "Дата создания задачи", required = true, example = "2000-01-01 12:00:00")
+    @Schema(description = "Дата создания задачи", example = "2000-01-01 12:00:00")
     private LocalDateTime created;
 
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-    @Schema(description = "Дата обновления", required = true, example = "2000-01-01 13:00:00")
+    @Schema(description = "Дата обновления задача", example = "2000-01-01 13:00:00")
     private LocalDateTime updated;
 
     @NotNull
