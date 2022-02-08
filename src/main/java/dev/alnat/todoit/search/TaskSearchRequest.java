@@ -14,6 +14,7 @@ import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
+import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -53,6 +54,7 @@ public class TaskSearchRequest implements Serializable {
     @Schema(description = "Список статусов")
     private List<TaskStatus> statusList;
 
+    @Valid
     @Size(max = 5)
     @Schema(description = "Сортировка", maxLength = 5)
     @Parameter(array = @ArraySchema(schema = @Schema(implementation = Sorting.class)))

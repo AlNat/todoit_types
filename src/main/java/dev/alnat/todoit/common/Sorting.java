@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -20,6 +22,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class Sorting implements Serializable {
 
+    @NotBlank
     @Schema(description = "Поле сортировки", required = true)
     private String sortBy;
 
@@ -31,6 +34,15 @@ public class Sorting implements Serializable {
      */
     public enum SortOrder {
         ASC, DESC;
+    }
+
+
+    public static Sorting of(String field) {
+        return Sorting.builder().sortBy(field).sortOrder(SortOrder.ASC).build();
+    }
+
+    public static Sorting of(String field, SortOrder order) {
+        return Sorting.builder().sortBy(field).sortOrder(order).build();
     }
 
 }
