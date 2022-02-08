@@ -5,7 +5,7 @@
 
     <groupId>dev.alnat.todoit</groupId>
     <artifactId>types</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>todoit-types</name>
     <description>Types for ToDoIt application</description>
 
